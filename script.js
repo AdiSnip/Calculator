@@ -44,18 +44,16 @@ buttons.forEach((button)=>{
     }else if(button.innerText === "%"){
       string += "/100"
       result += "%"
+      array.push(result);
       mainwindow.value = result
-    }else if(array.length>10){
-      string += button.innerText;
-      result += button.innerText;
-      array.push(result)
-      mainwindow.value = result;
-      mainwindow.scrollBy(50,0)
     }else{
        string += button.innerText;
        result += button.innerText;
        array.push(result)
        mainwindow.value = result;
+    }
+    if(array.length>10){
+      mainwindow.scrollBy(50,0)
     }
   })
 })
